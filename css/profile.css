@@ -72,3 +72,10 @@ ul {
 	color: #fff;
 	border-radius: 50px;
 }
+
+.link
+{
+	color: rgba(117,117,117 ,1);
+	text-decoration: none; 
+	background-color: none;
+}

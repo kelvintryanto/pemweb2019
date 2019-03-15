@@ -17,14 +17,22 @@
 <body>
   <div class="container">
     <ul class="twitter" role="navigation">
-      <li><a href="profile.php"><i class="fa fa-home"></i>Profile</a></li>
-      <li><i class="fas fa-sign-out-alt"></i>Logout</li>
+      <li>
+        <a href="profile.php">
+          <div class="link"><i class="fa fa-home"></i>Profile</div>
+        </a>
+      </li>
+      <li>
+        <a href="login.php">
+          <div class="link"><i class="fas fa-sign-out-alt"></i>Logout</div>
+        </a>
+      </li>
       <!-- <li><i class="fa fa-bell"></i>Notifications</li> -->
       <!-- <li><i class="fa fa-envelope"></i>Messages</li> -->
       <li class="twitter__bird"><i class="fab fa-twitter"></i></li>
       <li><form><input placeholder=" search twitter"/> <i class="fa fa-search"></i></form></li>
       <li><i class="fa fa-user-circle"></i></li>
-      <li><button> Tweet </button></li>
+      <li><button class="btn"> Tweet </button></li>
     </ul>
   </div>
 </body>
