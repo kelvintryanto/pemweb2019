@@ -96,11 +96,13 @@
                 <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
               </div>
               <div class="panel-body">
+                <form>
                   <p style="padding: 0;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
                   <div style="margin-top: 10px;" class="col-sm-12">
                     <a href="#"><i style="text-align: center;" class="fas fa-reply col-sm-6" name="reply"> Reply</i></a>
                     <a href=""><i style="text-align: center;" class="fas fa-trash col-sm-6" name="delete"> Delete</i></a>
-                  </div> <!-- /col-sm-12 -->                  
+                  </div> <!-- /col-sm-12 -->
+                </form>                  
               </div><!-- /panel-body -->
             </div><!-- /panel panel-default -->
           </div><!-- /col-sm-10 -->
