@@ -1,3 +1,36 @@
+<?php
+//error_reporting(0);
+session_start();
+include('config.php');
+error_reporting(0);
+if(isset($_POST['signup']))
+{
+  $fname=$_POST['firstname'];
+  $lname=$_POST['lastname'];
+  $email=$_POST['emailid']; 
+  $mobile=$_POST['mobileno'];
+  $username=$_POST['username'];
+  $password=md5($_POST['password']); 
+  $sql="INSERT INTO  users(firstname,lastname,email,mobile,username,password) VALUES(:fname,:lname,:email,:mobile,:username,:password)";
+  $query = $dbh->prepare($sql);
+  $query->bindParam(':fname',$fname,PDO::PARAM_STR);
+  $query->bindParam(':lname',$lname,PDO::PARAM_STR);
+  $query->bindParam(':email',$email,PDO::PARAM_STR);
+  $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
+  $query->bindParam(':username',$username,PDO::PARAM_STR);
+  $query->bindParam(':password',$password,PDO::PARAM_STR);
+  $query->execute();
+  $lastInsertId = $dbh->lastInsertId();
+  if($lastInsertId)
+  {
+    echo "<script>alert('Registration successfull. Now you can login');document.location='login.php'</script>";
+  }
+  else 
+  {
+    echo "<script>alert('Something went wrong. Please try again');</script>";
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +64,7 @@
 <div class="container-fluid">
     <div class="container">
         <div class="formBox">
-            <form>
+            <form method="POST" name="signup" onsubmit="return valid();">
                 <div class="row">
                     <div class="col-sm-12">
                         <h1>Register</h1>
@@ -42,14 +75,14 @@
                     <div class="col-sm-6">
                         <div class="inputBox ">
                             <div class="inputText">First Name</div>
-                            <input type="text" name="" class="input">
+                            <input type="text" name="firstname" class="input">
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="inputBox">
                             <div class="inputText">Last Name</div>
-                            <input type="text" name="" class="input">
+                            <input type="text" name="lastname" class="input">
                         </div>
                     </div>
                 </div>
@@ -58,14 +91,14 @@
                     <div class="col-sm-6">
                         <div class="inputBox">
                             <div class="inputText">Email</div>
-                            <input type="text" name="" class="input">
+                            <input type="text" name="emailid" class="input">
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="inputBox">
                             <div class="inputText">Mobile</div>
-                            <input type="text" name="" class="input">
+                            <input type="text" name="mobileno" class="input">
                         </div>
                     </div>
                 </div>
@@ -74,7 +107,7 @@
                     <div class="col-sm-12">
                         <div class="inputBox">
                             <div class="inputText">Username</div>
-                            <input type="text" name="" class="input">
+                            <input type="text" name="username" class="input">
                         </div>
                     </div>
                 </div>
@@ -83,14 +116,14 @@
                     <div class="col-sm-12">
                         <div class="inputBox">
                             <div class="inputText">New Password</div>
-                            <input type="password" name="" class="input">
+                            <input type="password" name="password" class="input">
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <input type="submit" name="" class="btn btn-outline-primary btn-block" value="Log in">
+                        <input type="submit" name="signup" id="submit" class="btn btn-outline-primary btn-block" value="Signup">
                     </div>
                 </div>
             </form>

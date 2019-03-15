@@ -1,3 +1,30 @@
+<?php
+session_start();
+include('config.php');
+error_reporting(0);
+if(isset($_POST['login']))
+{
+  $username=$_POST['username'];
+  $password=md5($_POST['password']);
+  $sql ="SELECT username,password,firstname FROM users WHERE username=:username and password=:password";
+  $query= $dbh -> prepare($sql);
+  $query-> bindParam(':username', $username, PDO::PARAM_STR);
+  $query-> bindParam(':password', $password, PDO::PARAM_STR);
+  $query-> execute();
+  $results=$query->fetchAll(PDO::FETCH_OBJ);
+  if($query->rowCount() > 0)
+  {
+    $_SESSION['login']=$_POST['username'];
+    $_SESSION['fname']=$results->firstname;
+    $currentpage=$_SERVER['REQUEST_URI'];
+    echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
+  } else{
+    
+    echo "<script>alert('Invalid Username or Password');</script>";
+
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +43,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
+                        <form class="form-inline" method="POST">
                         <form class="form-inline">
                          <div class="form-group">
                             <input type="text" class="form-control mb-2 mr-sm-2" name="username" placeholder="Username">
@@ -23,7 +51,7 @@
                         <div class="form-group">
                             <input type="password" class="form-control mb-2 mr-sm-2" name="password" placeholder="Password">
                         </div>
-                        <button type="submit" class="btn btn-outline-primary mb-2">Log in</button>
+                        <button type="submit" name="login" class="btn btn-outline-primary mb-2">Log in</button>
                     </form>
                 </div>
             </div>

@@ -1,3 +1,30 @@
+<?php
+session_start();
+include('config.php');
+error_reporting(0);
+if(isset($_POST['login']))
+{
+  $username=$_POST['username'];
+  $password=md5($_POST['password']);
+  $sql ="SELECT username,password,firstname FROM users WHERE username=:username and password=:password";
+  $query= $dbh -> prepare($sql);
+  $query-> bindParam(':username', $username, PDO::PARAM_STR);
+  $query-> bindParam(':password', $password, PDO::PARAM_STR);
+  $query-> execute();
+  $results=$query->fetchAll(PDO::FETCH_OBJ);
+  if($query->rowCount() > 0)
+  {
+    $_SESSION['login']=$_POST['username'];
+    $_SESSION['fname']=$results->firstname;
+    $currentpage=$_SERVER['REQUEST_URI'];
+    echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
+  } else{
+    
+    echo "<script>alert('Invalid Username or Password');</script>";
+
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +62,8 @@
         <div class="col-md-6">
             <img src="img/twittie.png" style="width: 5%; height: 15%"> <a href="index.php">Home</a>
             <h4><b>Log in to Twittie</b></h4>
-            
 
-            <form action="" method="POST">
+            <form method="POST">
 
                 <div class="form-group">
                     <input class="form-control" type="text" name="username" placeholder="Username" required />
@@ -46,7 +72,7 @@
                     <input class="form-control" type="password" name="password" placeholder="Password" required />
                 </div>
 
-                <input type="submit" class="btn btn-primary" name="login" value="Masuk" />
+                <input type="submit" class="btn btn-primary" name="login" value="Submit" />
                 <label><input type="checkbox"> Remember me</label>
 
             </form>
