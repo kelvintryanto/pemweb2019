@@ -44,6 +44,7 @@ if(isset($_POST['login']))
                 <div class="row">
                     <div class="col">
                         <form class="form-inline" method="POST">
+                        <form class="form-inline">
                          <div class="form-group">
                             <input type="text" class="form-control mb-2 mr-sm-2" name="username" placeholder="Username">
                         </div>
