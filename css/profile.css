@@ -62,10 +62,33 @@ ul {
 	font-size: 1.5rem;
 }
 
+.container{
+	padding: 0;
+}
+
 .twitter li > button {
 	padding-right: 20px;
 	padding-left: 20px;
 	width: 50px
+	font-size: 1em;
+	border: 0;
+	background: rgba(85,172,238 ,1);
+	color: #fff;
+	border-radius: 50px;
+}
+
+.tweeting input{
+	padding-right: 10px;
+	padding-left: 10px;
+	border-radius: 50px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+
+}
+
+.tweeting button {
+	margin-left: 15px;
+	text-align: center;
 	font-size: 1em;
 	border: 0;
 	background: rgba(85,172,238 ,1);
@@ -84,6 +107,12 @@ ul {
 .thumbnail {
     padding:0px;
 }
+
+.thumbnail img{
+	border-radius: 50%;
+	width: 50px;
+}
+
 .panel {
 	position:relative;
 }
@@ -98,6 +127,11 @@ ul {
 	border-color:transparent;
 	border-style:solid solid outset;
 	pointer-events:none;
+}
+
+.panel>.panel-body{
+	padding-right: 10px;
+	padding-left: 10px;
 }
 .panel>.panel-heading:after{
 	border-width:7px;
@@ -118,26 +152,32 @@ ul {
 	padding-top: 10px;
 }
 
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .backdrop{
 	background-color: #500;
 }
+
 .profpic img{
 	border-radius: 50%;
 	position: inline-block;
     text-align: center;
     width: 100px;
-    transform: translateX(50%);
 }
 
 .no-padding{
 	padding: 0;
 }
 
-#reply ul{
+.tweeting i{
 	list-style: none;
 	margin-left: 10px;
 }
 
-#reply li{
+.tweeting i{
 	font-size: 2rem;
 }

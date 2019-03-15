@@ -41,54 +41,75 @@
     </div>
 
     <!-- TEMPAT PROFIL -->
-    <div class="row col-sm-12">
-      <div style="padding-right: 30px; padding-left: 30px; text-align: center;" class="col-3">
+    <div style="padding: 0; margin: 0;" class="row col-sm-12">
+      <div style="text-align: center; margin: 0; margin-right: 10px; " class="row col-3 center-block">
         <div style="height: 150px; background: #666; border-radius: 10px" class="panel panel-default">
-         <div class="profpic">
-          <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-        </div><!-- /thumbnail -->
-        <h4><strong>@selectusername</strong></h4>
-      </div>
-    </div>
-
-
-    <div class="row col-9">
-      <!-- TEMPAT COMMENT -->
-      <div class="row">
-        <div class="col-sm-12">
-          <h3>User Comment Example</h3>
-        </div><!-- /col-sm-12 -->
-      </div><!-- /row -->
-
-      <!-- REPEAT SELECT COMMENT USER DI SINI -->
-      <div class="row col-11">
-        <div class="col-sm-2">
-          <div class="thumbnail">
-            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+          <div class="profpic">
+            <img class="img-responsive user-photo center-block" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
           </div><!-- /thumbnail -->
-        </div><!-- /col-sm-1 -->
-
-        <div style="padding: 0;" class="col-sm-10">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
-            </div>
-            <div class="panel-body">
-              Select comment from comment table for each user
-            </div><!-- /panel-body -->
-          </div><!-- /panel panel-default -->
-        </div><!-- /col-sm-5 -->
-      </div><!-- /row col-sm-10-->
-
-      <div id="reply" class="row col-sm-1">
-        <ul>
-          <li><i class="fas fa-reply"></i></li>
-          <li><i class="fas fa-trash"></i></li>
-        </ul>
+          <h4><strong>@selectusername</strong></h4>
+        </div>
       </div>
 
-    </div> <!-- /row col-sm-9 -->
-  </div>
-</div><!-- /container -->
+
+      <div style="padding-right: 0;" class="row col-9">
+        <!-- TEMPAT COMMENT -->
+        <div class="row">
+          <div class="col-sm-12">
+            <h3>Comment & Status</h3>
+          </div><!-- /col-sm-12 -->
+        </div><!-- /row -->
+
+        <!-- TULIS STATUS -->
+        <div style="padding: 0;" class="row col-12">
+          <div style="padding-left: 0;" class="col-sm-1">
+            <div style="border: 0;" class="thumbnail">
+              <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+            </div><!-- /thumbnail -->
+          </div><!-- /col-sm-1 -->
+
+          <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
+              </div>
+              <div class="panel-body">
+                <form class="tweeting">
+                  <input class="col-sm-10" type="" name="" placeholder="Select comment from comment table for each user...">
+                  <button class="btn col-sm-1">Tweet</button>               
+                </form>
+              </div><!-- /panel-body -->
+            </div><!-- /panel panel-default -->
+          </div><!-- /col-sm-10 -->
+        </div><!-- /row col-12-->
+
+        <div style="padding: 0;" class="row col-12">
+          <div style="padding-left: 0;" class="col-sm-1">
+            <div style="border: 0;" class="thumbnail">
+              <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+            </div><!-- /thumbnail -->
+          </div><!-- /col-sm-1 -->
+
+          <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
+              </div>
+              <div class="panel-body">
+                  <p style="padding: 0;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
+                  <div style="margin-top: 10px;" class="col-sm-12">
+                    <a href="#"><i style="text-align: center;" class="fas fa-reply col-sm-6" name="reply"> Reply</i></a>
+                    <a href=""><i style="text-align: center;" class="fas fa-trash col-sm-6" name="delete"> Delete</i></a>
+                  </div> <!-- /col-sm-12 -->                  
+              </div><!-- /panel-body -->
+            </div><!-- /panel panel-default -->
+          </div><!-- /col-sm-10 -->
+        </div><!-- /row col-12-->
+
+
+      </div> <!-- /row col-sm-9 -->
+
+    </div>
+  </div><!-- /container -->
 </body>
 </html>
