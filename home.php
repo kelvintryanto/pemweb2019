@@ -112,7 +112,7 @@
           <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
             <div class="card">
               <div class="card-header">
-                <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago test arkka</span>
+                <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
               </div>
               <div class="card-body">
                 <form>
