@@ -39,7 +39,7 @@
           <ul class="twitter" role="navigation">
             <li>
               <a href="profile.php">
-                <div class="link"><i class="fa fa-home"></i>Profile</div>
+                <div class="link"><i class="fa fa-home"></i>Home</div>
               </a>
             </li>
             <li>

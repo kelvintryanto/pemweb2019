@@ -17,7 +17,7 @@ if(isset($_POST['login']))
     $_SESSION['login']=$_POST['username'];
     $_SESSION['fname']=$results->firstname;
     $currentpage=$_SERVER['REQUEST_URI'];
-    echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
+    echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
   } else{
     
     echo "<script>alert('Invalid Username or Password');</script>";
