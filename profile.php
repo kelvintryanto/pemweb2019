@@ -52,7 +52,7 @@
             <li class="twitter__bird"><i class="fab fa-twitter"></i></li>
             <li><form><input placeholder=" search twitter"/> <i class="fa fa-search"></i></form></li>
             <li><i class="fa fa-user-circle"></i></li>
-            <li><button class="btn"> Tweet </button></li>
+            <li><button class="btn" data-toggle="modal" data-target="#statusModal"> Tweet </button></li>
           </ul>
         </nav>
       </div>      
@@ -61,9 +61,9 @@
     <!-- TEMPAT PROFIL -->
     <div style="margin: 0;padding: 0;" class="row col-sm-12">
       <div style="text-align: center; margin: 0; margin-right: 10px; " class="row col-3 center-block">
-        <div style="height: 150px; background: #666; border-radius: 10px" class="card">
+        <div style="height:165px; background: #666; border-radius: 10px; padding: 0 10px 10px 10px;" class="card">
           <div class="profpic">
-            <img class="img-responsive user-photo center-block" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+            <img style="cursor: pointer;" class="img-responsive user-photo center-block" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
           </div><!-- /thumbnail -->
           <h4><strong>@selectusername</strong></h4>
         </div>
@@ -92,9 +92,9 @@
                 <strong>@selectusername</strong>
               </div>
               <div class="card-body">
-                <form class="tweeting">
-                  <input class="col-sm-9" type="" name="" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
-                  <button class="btn col-sm-2">Tweet</button>               
+                <form class="tweeting" method="post">
+                  <input class="col-sm-9" type="" name="status" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
+                  <button class="btn col-sm-2">Tweet</button>
                 </form>
               </div><!-- /card-body -->
             </div><!-- /card -->
@@ -118,7 +118,7 @@
                 <form>
                   <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
                   <div class="col-sm-12">
-                    <a href="#"><i style="text-align: center;" class="fas fa-reply col-sm-2" name="reply"> Reply</i></a>
+                    <a href="#"><i style="text-align: center;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i></a>
                     <a href=""><i style="text-align: center;" class="fas fa-trash col-sm-2" name="delete"> Delete</i></a>
                   </div> <!-- /col-sm-12 -->
                 </form>                  
@@ -146,35 +146,14 @@
                  <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
                   <div class="col-sm-12">
                     <a href="#"><i style="text-align: center;" class="fas fa-heart col-sm-2" name="like"> Like</i></a>
-                    <a href="#" role="button" data-toggle="modal" data-target="#exampleModal"><i style="text-align: center;" class="fas fa-reply col-sm-2" name="reply"> Reply</i></a>
+                    <a href="#" role="button" data-toggle="modal" data-target="#replyModal"><i style="text-align: center;" class="fas fa-reply col-sm-2" name="reply"> Reply</i></a>
                     <a href="#"><i style="text-align: center;" class="fas fa-flag col-sm-3" name="comments">Comments(0)</i></a>
                     <a href=""><i style="text-align: center;" class="fas fa-trash col-sm-2" name="delete"> Delete</i></a>
                   </div> <!-- /col-sm-12 -->
                 </form>                  
               </div><!-- /card-body -->
             </div><!-- /card -->
-          </div><!-- /col-sm-10 -->
-
-          <!-- MODAL -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Tweet</button>
-                </div>
-              </div>
-            </div>
-          </div>                    
+          </div><!-- /col-sm-10 -->              
         </div><!-- /row col-12-->
         <!-- END TIMELINE 2-->
 
@@ -196,7 +175,7 @@
                  <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
                   <div class="col-sm-12">
                     <a href="#"><i style="text-align: center;" class="fas fa-heart col-sm-2" name="like"> Like</i></a>
-                    <a href="#"><i style="text-align: center;" class="fas fa-reply col-sm-2" name="reply"> Reply</i></a>
+                    <a href="#"><i style="text-align: center;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i></a>
                     <a href=""><i style="text-align: center;" class="fas fa-trash col-sm-2" name="delete"> Delete</i></a>
                   </div> <!-- /col-sm-12 -->
                 </form>                  
@@ -223,7 +202,7 @@
                 <form>
                  <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
                   <div class="col-sm-12">
-                    <a href="#"><i style="text-align: center;" class="fas fa-reply col-sm-2" name="reply"> Reply</i></a>
+                    <a href="#"><i style="text-align: center;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i></a>
                     <a href=""><i style="text-align: center;" class="fas fa-trash col-sm-2" name="delete"> Delete</i></a>
                   </div> <!-- /col-sm-12 -->
                 </form>                  
@@ -250,8 +229,8 @@
                 <form>
                  <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
                   <div class="col-sm-12">
-                    <a href="#"><i style="text-align: center;" class="fas fa-reply col-sm-2" name="reply"> Reply</i></a>
-                    <a href=""><i style="text-align: center;" class="fas fa-trash col-sm-2" name="delete"> Delete</i></a>
+                    <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
+                    <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete"> Delete</i>
                   </div> <!-- /col-sm-12 -->
                 </form>                  
               </div><!-- /card-body -->
@@ -262,6 +241,52 @@
       </div> <!-- /row col-sm-9 -->
     </div>
   </div><!-- /container -->
+
+  <!-- MODAL TWEET-->
+  <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">What's Happening Today?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="replyForm">
+          <div class="modal-body">
+            <input class="col-sm-12" type="" name="" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" name="close">Close</button>
+            <button type="button" class="btn btn-primary" name="retweet" id="reply_tweet">Tweet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> <!-- /modal fade-->
+
+  <!-- MODAL REPLY-->
+  <div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reply this Status</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="replyForm">
+          <div class="modal-body">
+            <input class="col-sm-12" type="" name="" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" name="close">Close</button>
+            <button type="button" class="btn btn-primary" name="retweet" id="reply_tweet">Reply</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> <!-- /modal fade-->
 </body>
 
 
