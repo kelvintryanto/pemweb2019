@@ -59,7 +59,7 @@ ul {
 }
 
 .twitter li .fa-user-circle {
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
 .container{
@@ -105,7 +105,7 @@ ul {
 
 /*COMMENT*/
 .thumbnail {
-    padding:0px;
+    padding:5px;
 }
 
 .thumbnail img{
@@ -113,10 +113,11 @@ ul {
 	width: 50px;
 }
 
-.panel {
-	position:relative;
+.card {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
 }
-.panel>.panel-heading:after,.panel>.panel-heading:before{
+.card>.card-header:after,.card>.card-header:before{
 	position:absolute;
 	top:11px;left:-16px;
 	right:100%;
@@ -129,9 +130,8 @@ ul {
 	pointer-events:none;
 }
 
-.panel>.panel-body{
-	padding-right: 10px;
-	padding-left: 10px;
+.card>.card-body{
+	padding: 10px;
 }
 .panel>.panel-heading:after{
 	border-width:7px;
@@ -145,7 +145,8 @@ ul {
 }
 
 .row{
-	margin: 0px;
+	margin: 0;
+	padding: 0;
 }
 
 .profpic {
