@@ -21,7 +21,6 @@ if(isset($_POST['login']))
   } else{
     
     echo "<script>alert('Invalid Username or Password');</script>";
-
   }
 }
 ?>
