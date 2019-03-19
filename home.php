@@ -38,20 +38,26 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="twitter" role="navigation">
             <li>
-              <a href="profile.php">
+              <a href="home.php">
                 <div class="link"><i class="fa fa-home"></i>Home</div>
               </a>
             </li>
             <li>
-              <a href="login.php">
-                <div class="link"><i class="fas fa-sign-out-alt"></i>Logout</div>
-              </a>
+              
             </li>
-            <!-- <li><i class="fa fa-bell"></i>Notifications</li> -->
-            <!-- <li><i class="fa fa-envelope"></i>Messages</li> -->
             <li class="twitter__bird"><i class="fab fa-twitter"></i></li>
             <li><form><input placeholder=" search twitter"/> <i class="fa fa-search"></i></form></li>
-            <li><i class="fa fa-user-circle"></i></li>
+            <li class="btn-group">
+              <i class="fa fa-user-circle" data-toggle="dropdown"></i>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button">My Profile</button>
+                <button class="dropdown-item" type="button">Edit Profile</button>
+                <div class="dropdown-divider"></div>                
+                <a href="login.php" class="dropdown-item">
+                  <div class="link"><i class="fas fa-sign-out-alt"></i>Logout</div>
+                </a>
+              </div>
+            </li>
             <li><button class="btn" data-toggle="modal" data-target="#statusModal"> Tweet </button></li>
           </ul>
         </nav>
