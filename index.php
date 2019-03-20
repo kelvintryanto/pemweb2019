@@ -64,23 +64,28 @@ if(isset($_POST['login']))
     <div class="container">
 
       <div class="row col-md-12">
-
-          <img class="col-md-2" src="img/tweety.png" height="100%" style="align-items: right">
-         <!-- <p><b>Join Twitter today.</b></p> -->
+       <img class="col-md-2" src="img/tweety.png" height="100%" style="align-items: right">
 
 
-
-       <div class="col-md-10" style="text-align: left;">
+       <div class="col-md-10" style="text-align: left; margin-top: 30px;">
         <h1>See what’s happening in the world right now</h1>
+      </div>
+    </div>
+
+    <div class="row col-md-12">
+      <div class="col-md-8">
+        <p><b>Join Twitter today.</b></p>
       </div>
     </div>
 
 
 
+    <div class="row col-md-12">
+      <a href="register.php" class="btn btn-primary" style="width: 500px;">Sign Up</a> 
+    </div>
 
     <div class="row col-md-12">
-      <a href="register.php" class="btn btn-primary">Sign Up</a> 
-      <a href="login.php" class="btn btn-outline-primary">Log in</a>
+      <a href="login.php" class="btn btn-outline-primary" style="width: 500px; margin-top: 10px">Log in</a>
     </div>
 
   </div>

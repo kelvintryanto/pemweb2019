@@ -45,7 +45,10 @@
             <li>
               
             </li>
-            <li class="twitter__bird"><i class="fab fa-twitter"></i></li>
+            <li class="twitter__bird">
+              <!-- <i class="fab fa-twitter"></i> -->
+              <img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
+            </li>
             <li><form><input placeholder=" search twitter"/> <i class="fa fa-search"></i></form></li>
             <li class="btn-group">
               <i class="fa fa-user-circle" data-toggle="dropdown"></i>
