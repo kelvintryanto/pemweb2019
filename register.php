@@ -56,7 +56,10 @@ if(isset($_POST['signup']))
             <li class="nav-item">
               <a class="nav-link" href="#"><b>About</b></a>
             </li>
-            <li class="twitter__bird"><i class="fab fa-twitter"></i></li>
+            <li class="twitter__bird">
+              <!-- <i class="fab fa-twitter"></i> -->
+              <img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
+            </li>
           </ul>
         </nav>
       </div>      

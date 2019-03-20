@@ -33,7 +33,7 @@ if(isset($_POST['login']))
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Twittie</title>
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -66,22 +66,19 @@ if(isset($_POST['login']))
         <!-- <p><b>Join Twitter today.</b></p> -->
         <div class="col-md-10" style="text-align: left;">
           <h1>See what’s happening in the world right now</h1>
+          <p><b>Join Twittie today.</b></p>          
         </div>
       </div>
-
-
-
-
       <div class="row col-md-12">
-        <a href="register.php" class="btn btn-primary">Sign Up</a> 
-        <a href="login.php" class="btn btn-outline-primary">Log in</a>
+        <a href="register.php" class="btn btn-primary col-md-6">Sign Up</a>
+        <a href="login.php" class="btn btn-outline-primary col-md-6">Log in</a>
       </div>
-
     </div>
   </section>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="js/bootstrap.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js" type="text/javascript"></script>

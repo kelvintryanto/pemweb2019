@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Twittie</title>
 
-    <!-- CUSTOM CSS -->
+  <!-- CUSTOM CSS -->
   <link rel="stylesheet" type="text/css" href="css/home.css">
 
   <!-- CSS BOOTSTRAP -->
@@ -42,16 +42,25 @@
                 <div class="link"><i class="fa fa-home"></i>Home</div>
               </a>
             </li>
-            <li>
-              
+            
+            <li class="twitter__bird">
+              <!-- <i class="fab fa-twitter"></i> -->
+              <img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
             </li>
-            <li class="twitter__bird"><i class="fab fa-twitter"></i></li>
             <li><form><input placeholder=" search twitter"/> <i class="fa fa-search"></i></form></li>
             <li class="btn-group">
               <i class="fa fa-user-circle" data-toggle="dropdown"></i>
               <div class="dropdown-menu dropdown-menu-right">
-                <button class="dropdown-item" type="button">My Profile</button>
-                <button class="dropdown-item" type="button">Edit Profile</button>
+                <button class="dropdown-item" type="button">
+                  <a href="myprofile.php">
+                    <div class="link">My Profile</div>
+                  </a>
+                </button>
+                <button class="dropdown-item" type="button">
+                  <a href="editprofile.php">
+                    <div class="link">Edit Profile</div>
+                  </a>
+                </button>
                 <div class="dropdown-divider"></div>                
                 <a href="login.php" class="dropdown-item">
                   <div class="link"><i class="fas fa-sign-out-alt"></i>Logout</div>
@@ -150,171 +159,171 @@
               <div class="card-body">
                 <form>
                  <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
-                  <div class="col-sm-12">
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
-                    <a href="#"><i style="text-align: center;" class="fas fa-flag col-sm-3" name="comments">Comments(0)</i></a>
-                  </div> <!-- /col-sm-12 -->
-                </form>                  
-              </div><!-- /card-body -->
-            </div><!-- /card -->
-          </div><!-- /col-sm-10 -->              
-        </div><!-- /row col-12-->
-        <!-- END TIMELINE 2-->
+                 <div class="col-sm-12">
+                  <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
+                  <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
+                  <a href="#"><i style="text-align: center;" class="fas fa-flag col-sm-3" name="comments">Comments(0)</i></a>
+                </div> <!-- /col-sm-12 -->
+              </form>                  
+            </div><!-- /card-body -->
+          </div><!-- /card -->
+        </div><!-- /col-sm-10 -->              
+      </div><!-- /row col-12-->
+      <!-- END TIMELINE 2-->
 
-        <!-- TIMELINE 3-->
-        <div style="padding: 0;" class="row col-12">
-          <div style="padding-left: 0;" class="col-sm-1">
-            <div style="border: 0;" class="thumbnail">
-              <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-            </div><!-- /thumbnail -->
-          </div><!-- /col-sm-1 -->
+      <!-- TIMELINE 3-->
+      <div style="padding: 0;" class="row col-12">
+        <div style="padding-left: 0;" class="col-sm-1">
+          <div style="border: 0;" class="thumbnail">
+            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+          </div><!-- /thumbnail -->
+        </div><!-- /col-sm-1 -->
 
-          <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
-            <div class="card">
-              <div class="card-header">
-                <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
-              </div>
-              <div class="card-body">
-                <form>
-                 <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
-                  <div class="col-sm-12">
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
-                    <a href="#"><i style="text-align: center;" class="fas fa-heart col-sm-2" name="like"> Like</i></a>
-                  </div> <!-- /col-sm-12 -->
-                </form>                  
-              </div><!-- /card-body -->
-            </div><!-- /card -->
-          </div><!-- /col-sm-10 -->
-        </div><!-- /r ow col-12-->
-        <!-- END TIMELINE 3-->
+        <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
+          <div class="card">
+            <div class="card-header">
+              <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
+            </div>
+            <div class="card-body">
+              <form>
+               <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
+               <div class="col-sm-12">
+                <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
+                <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
+                <a href="#"><i style="text-align: center;" class="fas fa-heart col-sm-2" name="like"> Like</i></a>
+              </div> <!-- /col-sm-12 -->
+            </form>                  
+          </div><!-- /card-body -->
+        </div><!-- /card -->
+      </div><!-- /col-sm-10 -->
+    </div><!-- /r ow col-12-->
+    <!-- END TIMELINE 3-->
 
-        <!-- TIMELINE 4-->
-        <div style="padding: 0;" class="row col-12">
-          <div style="padding-left: 0;" class="col-sm-1">
-            <div style="border: 0;" class="thumbnail">
-              <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-            </div><!-- /thumbnail -->
-          </div><!-- /col-sm-1 -->
+    <!-- TIMELINE 4-->
+    <div style="padding: 0;" class="row col-12">
+      <div style="padding-left: 0;" class="col-sm-1">
+        <div style="border: 0;" class="thumbnail">
+          <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+        </div><!-- /thumbnail -->
+      </div><!-- /col-sm-1 -->
 
-          <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
-            <div class="card">
-              <div class="card-header">
-                <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
-              </div>
-              <div class="card-body">
-                <form>
-                 <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
-                  <div class="col-sm-12">
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
-                  </div> <!-- /col-sm-12 -->
-                </form>                  
-              </div><!-- /card-body -->
-            </div><!-- /card -->
-          </div><!-- /col-sm-10 -->
-        </div><!-- /r ow col-12-->
-        <!-- END TIMELINE 4-->
+      <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
+        <div class="card">
+          <div class="card-header">
+            <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
+          </div>
+          <div class="card-body">
+            <form>
+             <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
+             <div class="col-sm-12">
+              <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
+              <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
+            </div> <!-- /col-sm-12 -->
+          </form>                  
+        </div><!-- /card-body -->
+      </div><!-- /card -->
+    </div><!-- /col-sm-10 -->
+  </div><!-- /r ow col-12-->
+  <!-- END TIMELINE 4-->
 
-        <!-- TIMELINE 5-->
-        <div style="padding: 0;" class="row col-12">
-          <div style="padding-left: 0;" class="col-sm-1">
-            <div style="border: 0;" class="thumbnail">
-              <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-            </div><!-- /thumbnail -->
-          </div><!-- /col-sm-1 -->
+  <!-- TIMELINE 5-->
+  <div style="padding: 0;" class="row col-12">
+    <div style="padding-left: 0;" class="col-sm-1">
+      <div style="border: 0;" class="thumbnail">
+        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+      </div><!-- /thumbnail -->
+    </div><!-- /col-sm-1 -->
 
-          <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
-            <div class="card">
-              <div class="card-header">
-                <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
-              </div>
-              <div class="card-body">
-                <form>
-                 <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
-                  <div class="col-sm-12">
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
-                  </div> <!-- /col-sm-12 -->
-                </form>                  
-              </div><!-- /card-body -->
-            </div><!-- /card -->
-          </div><!-- /col-sm-10 -->
-        </div><!-- /r ow col-12-->
-        <!-- END TIMELINE 5-->
-      </div> <!-- /row col-sm-9 -->
-    </div>
-  </div><!-- /container -->
-
-  <!-- MODAL TWEET-->
-  <div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">What's Happening Today?</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
+      <div class="card">
+        <div class="card-header">
+          <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
         </div>
-        <form id="replyForm">
-          <div class="modal-body">
-            <input class="col-sm-12" type="" name="" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" name="close">Close</button>
-            <button type="button" class="btn btn-primary" name="retweet" id="reply_tweet">Tweet</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div> <!-- /modal fade-->
+        <div class="card-body">
+          <form>
+           <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
+           <div class="col-sm-12">
+            <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
+            <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
+          </div> <!-- /col-sm-12 -->
+        </form>                  
+      </div><!-- /card-body -->
+    </div><!-- /card -->
+  </div><!-- /col-sm-10 -->
+</div><!-- /r ow col-12-->
+<!-- END TIMELINE 5-->
+</div> <!-- /row col-sm-9 -->
+</div>
+</div><!-- /container -->
 
-  <!-- MODAL REPLY-->
-  <div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Reply this Status</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form id="replyForm">
-          <div class="modal-body">
-            <input class="col-sm-12" type="" name="" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" name="close">Close</button>
-            <button type="button" class="btn btn-primary" name="retweet" id="reply_tweet">Reply</button>
-          </div>
-        </form>
+<!-- MODAL TWEET-->
+<div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">What's Happening Today?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <form id="replyForm">
+        <div class="modal-body">
+          <input class="col-sm-12" type="" name="" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" name="close">Close</button>
+          <button type="button" class="btn btn-primary" name="retweet" id="reply_tweet">Tweet</button>
+        </div>
+      </form>
     </div>
-  </div> <!-- /modal fade-->
+  </div>
+</div> <!-- /modal fade-->
 
-  <!-- MODAL DELETE-->
-  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Reply this Status</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form id="replyForm">
-          <div class="modal-body">
-            <p>Are you sure want to delete your status?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" name="close">No</button>
-            <button type="button" class="btn btn-danger" name="retweet" id="reply_tweet" data-dismiss="modal" name="close">Yes</button>
-          </div>
-        </form>
+<!-- MODAL REPLY-->
+<div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reply this Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <form id="replyForm">
+        <div class="modal-body">
+          <input class="col-sm-12" type="" name="" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" name="close">Close</button>
+          <button type="button" class="btn btn-primary" name="retweet" id="reply_tweet">Reply</button>
+        </div>
+      </form>
     </div>
-  </div> <!-- /modal fade-->
+  </div>
+</div> <!-- /modal fade-->
+
+<!-- MODAL DELETE-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reply this Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="replyForm">
+        <div class="modal-body">
+          <p>Are you sure want to delete your status?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" name="close">No</button>
+          <button type="button" class="btn btn-danger" name="retweet" id="reply_tweet" data-dismiss="modal" name="close">Yes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> <!-- /modal fade-->
 </body>
 
 
