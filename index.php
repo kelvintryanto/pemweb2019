@@ -74,7 +74,7 @@ if(isset($_POST['login']))
 
     <div class="row col-md-12">
       <div class="col-md-8">
-        <p><b>Join Twitter today.</b></p>
+        <p><b>Join Twitte today.</b></p>
       </div>
     </div>
 
