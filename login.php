@@ -52,10 +52,14 @@ if(isset($_POST['login']))
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="twitter" role="navigation">
             <li class="nav-item">
-              <a href="index.php"><b>Home</b></a>
+              <a href="index.php" class="nav-link">
+                  <b>Home</b>
+              </a>
             </li>
             <li class="nav-item">
-              <a href="about.php" class="nav-link" href="#"><b>About</b></a>
+              <a href="about.php" class="nav-link">
+                <b>About</b>
+              </a>
             </li>
             <li href="index.php" class="twitter__bird"><img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png"></li>
           </ul>

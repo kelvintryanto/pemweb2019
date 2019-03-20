@@ -1,15 +1,12 @@
+<?php 
+  if(isset($_POST['logout'])){
+    session_unset();
+
+    echo "<script>alert('Log Out Success!'); document.location='index.php'</script>";
+  }
+?>
+
 <!-- FARIZ & DIKA YANG NGERJAIN -->
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-</body>
-</html>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,21 +50,32 @@
 							<a href="home.php">
 								<div class="link"><i class="fa fa-home"></i>Home</div>
 							</a>
-						</li>						
+						</li>
 						<li class="twitter__bird">
-							<!-- <i class="fab fa-twitter"></i> -->
-							<img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
+							<a href="home.php">
+								<img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
+							</a>
 						</li>
 						<li><form><input placeholder=" search twitter"/> <i class="fa fa-search"></i></form></li>
 						<li class="btn-group">
 							<i class="fa fa-user-circle" data-toggle="dropdown"></i>
 							<div class="dropdown-menu dropdown-menu-right">
-								<button class="dropdown-item" type="button">My Profile</button>
-								<button class="dropdown-item" type="button">Edit Profile</button>
+								<button class="dropdown-item" type="button">
+									<a href="myprofile.php">
+										<div class="link"><i class="fas fa-user-circle" style="font-size: 1rem;"></i> Profile</div>
+									</a>
+								</button>
+								<button class="dropdown-item" type="button">
+									<a href="editprofile.php">
+										<div class="link"><i class="fas fa-edit" style="font-size: 1rem;"></i> Edit Profile</div>
+									</a>
+								</button>
 								<div class="dropdown-divider"></div>                
-								<a href="login.php" class="dropdown-item">
-									<div class="link"><i class="fas fa-sign-out-alt"></i>Logout</div>
-								</a>
+								<form method="post">
+									<button  class="dropdown-item" type="submit" name="logout" style="font-size: 1rem;">
+										<i class="fas fa-sign-out-alt"></i>Logout
+									</button>
+								</form>
 							</div>
 						</li>
 						<li><button class="btn" data-toggle="modal" data-target="#statusModal"> Tweet </button></li>
@@ -79,13 +87,31 @@
 		<!-- TEMPAT PROFIL -->
 		<div style="margin: 0;padding: 0;" class="row col-md-12">
 			<div style="text-align: center; margin: 0; margin-right: 10px; " class="row col-3 center-block">
-				<div style="height:165px; background: #fae85d; border-radius: 10px; padding: 0 10px 10px 10px;" class="card">
+				<div style="height:165px; width: 100%; background: #fae85d; border-radius: 10px; padding: 0 10px 10px 10px;" class="card">
 					<div class="profpic">
 						<img style="cursor: pointer;" class="img-responsive user-photo center-block" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
 					</div><!-- /thumbnail -->
 					<h4><strong>@selectusername</strong></h4>
 				</div>
+
+				<div style="border-radius: 10px; width: 100%; text-align: left; display: table;" class="card">
+					<div class="card-body" style="vertical-align: center;">						
+						<a href="myprofile.php">
+							<div class="link"><i class="fas fa-user-circle" style="font-size: 1rem;"></i> Profile</div>
+						</a>						
+						<div class="dropdown-divider"></div> 						
+						<a href="editprofile.php">
+							<div class="link"><i class="fas fa-edit" style="font-size: 1rem;"></i> Edit Profile</div>
+						</a>						
+					</div>
+				</div>
 			</div>
+
+			<!-- <div style="margin: 0;padding: 0;" class="row col-md-12">
+				<div style="text-align: center; margin: 0; margin-right: 10px; " class="row col-3">
+
+				</div>
+			</div> -->
 
 			<div style="padding: 0; margin-left: -5px;" class="col-md-8">
 				<div class="card">
@@ -96,9 +122,9 @@
 					<div class="card-body">
 						<div style="padding: 0;" class="row col-12">
 							<div style="padding-right: 0;" class="col-md-2">
-								<div style="border: 0;" class="thumbnail">
+								<div class="profpic">
 									<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" height="100" width="20" >
-								</div><!-- /thumbnail -->
+								</div>															
 							</div><!-- /col-sm-1 -->
 							<div class="col-md-10">
 								<div class="card">
@@ -106,15 +132,15 @@
 										<div class="col-md-12" style="margin-left: -20px">
 											<div class="col-md-12">
 												<label for="name">Name</label>
-												<input type="text" name="name" id="name" style="margin-left: 5px" />
+												<b><label type="text" name="name" id="name" style="margin-left: 5px">select username</label></b>
 											</div>
 											<div class="col-md-12">
 												<label for="name">Email</label>
-												<input type="text" name="name" id="name" style="margin-left: 10px" />
+												<b><label type="text" name="name" id="name" style="margin-left: 10px">select email</label></b>
 											</div>
 											<div class="col-md-12">
 												<label for="name">No.Hp</label>
-												<input type="text" name="name" id="name" style="margin-left: 3px" />
+												<b><label type="text" name="name" id="name" style="margin-left: 3px">select nomor hp</label></b>
 											</div>
 
 										</div>
@@ -127,24 +153,31 @@
 				</div><!-- /card-body -->
 			</div><!-- /card -->
 		</div><!-- /col-sm-10 -->
+	</div>
 
-		<div style="margin: 0;padding: 0;" class="row col-md-12">
-			<div style="text-align: center; margin: 0; margin-right: 10px; " class="row col-3 center-block">
-				<div style="height:100px; background: #fae85d; border-radius: 10px; padding: 0 60px 10px 60px;" class="card">
-					<button class="btn" data-toggle="modal" data-target="#statusModal">
-						<b>My Profile
-					</button>
-
-					<div class="dropdown-divider"></div> 
-
-					<button class="btn" data-toggle="modal" data-target="#statusModal">
-						<b>Edit Profile
+	<!-- MODAL TWEET-->
+	<div class="modal fade" id="statusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">What's Happening Today?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
+				<form id="replyForm">
+					<div class="modal-body">
+						<input class="col-sm-12" type="" name="" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal" name="close">Close</button>
+						<button type="button" class="btn btn-primary" name="retweet" id="reply_tweet">Tweet</button>
+					</div>
+				</form>
 			</div>
+		</div>
+	</div> <!-- /modal fade-->
+</body>
 
 
-		</body>
-
-
-		</html>
+</html>

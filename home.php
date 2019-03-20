@@ -1,3 +1,11 @@
+<?php 
+if(isset($_POST['logout'])){
+  session_unset();
+
+  echo "<script>alert('Log Out Success!'); document.location='index.php'</script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,10 +50,10 @@
                 <div class="link"><i class="fa fa-home"></i>Home</div>
               </a>
             </li>
-            
             <li class="twitter__bird">
-              <!-- <i class="fab fa-twitter"></i> -->
-              <img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
+              <a href="home.php">
+                <img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
+              </a>
             </li>
             <li><form><input placeholder=" search twitter"/> <i class="fa fa-search"></i></form></li>
             <li class="btn-group">
@@ -53,18 +61,20 @@
               <div class="dropdown-menu dropdown-menu-right">
                 <button class="dropdown-item" type="button">
                   <a href="myprofile.php">
-                    <div class="link">My Profile</div>
+                    <div class="link"><i class="fas fa-user-circle" style="font-size: 1rem;"></i> Profile</div>
                   </a>
                 </button>
                 <button class="dropdown-item" type="button">
                   <a href="editprofile.php">
-                    <div class="link">Edit Profile</div>
+                    <div class="link"><i class="fas fa-edit" style="font-size: 1rem;"></i>Edit Profile</div>
                   </a>
                 </button>
-                <div class="dropdown-divider"></div>                
-                <a href="login.php" class="dropdown-item">
-                  <div class="link"><i class="fas fa-sign-out-alt"></i>Logout</div>
-                </a>
+                <div class="dropdown-divider"></div>      
+                <form method="post">
+                  <button  class="dropdown-item" type="submit" name="logout" style="font-size: 1rem;">
+                    <i class="fas fa-sign-out-alt"></i>Logout
+                  </button>
+                </form>
               </div>
             </li>
             <li><button class="btn" data-toggle="modal" data-target="#statusModal"> Tweet </button></li>

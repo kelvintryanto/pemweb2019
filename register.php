@@ -47,19 +47,23 @@ if(isset($_POST['signup']))
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
 
 </head>
-<body style="background-color: #DCDCDC"> 
+<body style="background-color: #fff9ae"> 
   <div class="container">
-    <header style="background-color: #DCDCDC">
+    <header style="background-color: #fff9ae">
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="twitter" role="navigation">
             <li class="nav-item">
-              <a class="nav-link" href="#"><b>About</b></a>
+              <a href="index.php" class="nav-link">
+                  <b>Home</b>
+              </a>
             </li>
-            <li class="twitter__bird">
-              <!-- <i class="fab fa-twitter"></i> -->
-              <img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
+            <li class="nav-item">
+              <a href="about.php" class="nav-link">
+                <b>About</b>
+              </a>
             </li>
+            <li href="index.php" class="twitter__bird"><img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png"></li>
           </ul>
         </nav>
       </div>      

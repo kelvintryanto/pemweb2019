@@ -1,3 +1,11 @@
+<?php 
+  if(isset($_POST['logout'])){
+    session_unset();
+
+    echo "<script>alert('Log Out Success!'); document.location='index.php'</script>";
+  }
+?>
+
 <!-- ARKKA YANG NGERJAIN -->
 
 <!DOCTYPE html>
