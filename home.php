@@ -31,9 +31,9 @@
 
 </head>
 
-<body>
+<body style="background-color: #fff9ae">
   <div class="container">
-    <header>
+    <header style="background-color: #fff9ae">
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="twitter" role="navigation">
@@ -67,7 +67,7 @@
     <!-- TEMPAT PROFIL -->
     <div style="margin: 0;padding: 0;" class="row col-sm-12">
       <div style="text-align: center; margin: 0; margin-right: 10px; " class="row col-3 center-block">
-        <div style="height:165px; background: #666; border-radius: 10px; padding: 0 10px 10px 10px;" class="card">
+        <div style="height:165px; background: #fae85d; border-radius: 10px; padding: 0 10px 10px 10px;" class="card">
           <div class="profpic">
             <img style="cursor: pointer;" class="img-responsive user-photo center-block" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
           </div><!-- /thumbnail -->
