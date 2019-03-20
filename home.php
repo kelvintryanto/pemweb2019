@@ -127,7 +127,7 @@
                     <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
                     <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
                   </div> <!-- /col-sm-12 -->
-                </form>                  
+                </form>           
               </div><!-- /card-body -->
             </div><!-- /card -->
           </div><!-- /col-sm-10 -->
