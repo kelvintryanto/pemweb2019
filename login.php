@@ -19,7 +19,7 @@ if(isset($_POST['login']))
     $currentpage=$_SERVER['REQUEST_URI'];
     echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
   } else{
-    
+
     echo "<script>alert('Invalid Username or Password');</script>";
   }
 }
@@ -27,63 +27,60 @@ if(isset($_POST['login']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Twittie</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Twittie</title>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" type="text/css" href="css/home.css">
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="font-awesome/css/all.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    
+
 </head>
-<body> 
-    <nav class="navbar fixed-top navbar-expand-md custom-navbar navbar-dark">
-       <img class="navbar-brand" src="img/twittie.png" id="logo_custom" width="10%" style="width: 3%;height: 13%" alt="logo">
-       <button class="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon "></span>
-    </button>
-    <div class="collapse navbar-collapse " id="collapsibleNavbar">
-      <ul class="navbar-nav ml-auto ">
-        <li class="nav-item">
-          <a class="nav-link" href="index.php"><b>Home</b></a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#"><b>About</b></a>
-      </li>
-  </ul>
-</div>  
-</nav> 
-<div class="container mt-lg-5">
-    <div class="row">
-        <div class="col-md-6">
-            <img src="img/twittie.png" style="width: 5%; height: 15%"> <a href="index.php">Home</a>
-            <h4><b>Log in to Twittie</b></h4>
+<body style="background-color: #DCDCDC"> 
+  <div class="container">
+    <header style="background-color: #DCDCDC">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="twitter" role="navigation">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>About</b></a>
+            </li>
+            <li class="twitter__bird"><i class="fab fa-twitter"></i></li>
+          </ul>
+        </nav>
+      </div>      
+    </header>
 
-            <form method="POST">
+    <div class="container mt-lg-12" style="margin-top: 20px;">
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="card col-sm-8" style="padding: 10px;">
+          <h4><b>Log in to Twittie</b></h4>
+          <form method="POST">
+            <div class="form-group">
+              <input class="form-control" type="text" name="username" placeholder="Username" required />
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="password" name="password" placeholder="Password" required />
+            </div>
 
-                <div class="form-group">
-                    <input class="form-control" type="text" name="username" placeholder="Username" required />
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="password" name="password" placeholder="Password" required />
-                </div>
-
-                <input type="submit" class="btn btn-primary" name="login" value="Submit" />
-                <label><input type="checkbox"> Remember me</label>
-
-            </form>
-            <p>New to Twittie? <a href="register.php">Sign up now</a></p>   
+            <input type="submit" class="btn btn-primary" name="login" value="Submit" />
+            <label><input type="checkbox"> Remember me</label>
+          </form>
+          <p>New to Twittie? <a href="register.php">Sign up now</a></p>   
         </div>
+        
+        
 
-        <div class="col-md-6">
-            <!-- isi dengan sesuatu di sini -->
-        </div>
-
+      </div>
     </div>
-</div>
-
+  </div>
 </body>
 </html>
