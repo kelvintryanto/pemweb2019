@@ -45,7 +45,8 @@ ul {
 	cursor: pointer;
 }
 .twitter li:hover{
-	color: rgba(85,172,238 ,1);
+	/*color: rgba(85,172,238 ,1);*/
+	color:#ffcb78;
 }
 .twitter__bird {
 	color: rgba(85,172,238 ,1);
@@ -93,14 +94,6 @@ ul {
 	padding:11px 20px;
 	text-decoration:none;
 }*/
-
-.tweeting li:hover {
-	background-color:#ffcb78;
-}
-.tweeting li:active {
-	position:relative;
-	top:1px;
-}
 
 .tweeting input{
 	padding-right: 10px;
