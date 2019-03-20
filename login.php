@@ -67,7 +67,6 @@ if(isset($_POST['login']))
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="card col-sm-8" style="padding: 10px;">
-
           <div class="container">
             <div class="formBox">
 
@@ -104,7 +103,7 @@ if(isset($_POST['login']))
                 </div> -->
 
 
-                <input type="submit" class="btn btn-primary" name="login" value="Submit" />
+                <input type="submit" class="btn-submit" name="login" value="Submit" />
                 <label><input type="checkbox"> Remember me</label>
               </form>
 
