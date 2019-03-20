@@ -33,11 +33,13 @@ if(isset($_POST['login']))
   <title>Twittie</title>
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/main.css"/> -->
   <link rel="stylesheet" type="text/css" href="css/login.css">
   <!-- CUSTOM CSS -->
   <link rel="stylesheet" type="text/css" href="css/home.css">
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
+
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
@@ -62,25 +64,59 @@ if(isset($_POST['login']))
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="card col-sm-8" style="padding: 10px;">
-          <h4><b>Log in to Twittie</b></h4>
-          <form method="POST">
-            <div class="form-group">
-              <input class="form-control" type="text" name="username" placeholder="Username" required />
-            </div>
-            <div class="form-group">
-              <input class="form-control" type="password" name="password" placeholder="Password" required />
-            </div>
+          <div class="container">
+            <div class="formBox">
 
-            <input type="submit" class="btn btn-primary" name="login" value="Submit" />
-            <label><input type="checkbox"> Remember me</label>
-          </form>
-          <p>New to Twittie? <a href="register.php">Sign up now</a></p>   
+              <form method="POST" name="signup" onsubmit="return valid();">
+
+                <div style="margin-bottom: 20px;" class="row">
+                  <div class="col-sm-12">
+                    <h4><b>Log in to Twittie</b></h4>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="inputBox">
+                      <div class="inputText">First Name</div>
+                      <input type="text" name="username" class="input" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="inputBox">
+                      <div class="inputText">Last Name</div>
+                      <input type="password" name="password" class="input" required>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!--<div class="form-group">
+                  <input class="form-control" type="password" name="password" placeholder="Password" required />
+                </div> -->
+
+
+                <input type="submit" class="btn btn-primary" name="login" value="Submit" />
+                <label><input type="checkbox"> Remember me</label>
+              </form>
+
+              <p>New to Twittie? <a href="register.php">Sign up now</a></p>   
+            </div>
+          </div>
         </div>
-        
-        
 
       </div>
     </div>
   </div>
+
+  <script type="text/javascript">
+    $(".input").focus(function() {
+      $(this).parent().addClass("focus");
+    })
+  </script>
 </body>
 </html>

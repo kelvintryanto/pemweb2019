@@ -45,10 +45,11 @@ if(isset($_POST['signup']))
   <link rel="stylesheet" type="text/css" href="css/home.css">
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
+
 </head>
-<body>
+<body style="background-color: #DCDCDC"> 
   <div class="container">
-    <header>
+    <header style="background-color: #DCDCDC">
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="twitter" role="navigation">
@@ -79,77 +80,83 @@ if(isset($_POST['signup']))
 </nav>-->
 
 
-<div class="container-fluid">
-  <div class="container">
-    <div class="formBox">
-      <form method="POST" name="signup" onsubmit="return valid();">
-        <div class="row">
-          <div class="col-sm-12">
-            <h1>Register</h1>
-          </div>
-        </div>
+<div class="container mt-lg-12" style="margin-top: 20px;">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="card col-sm-8" style="padding: 10px;">
+      <div class="container">
+        <div class="formBox">
+          
+          <form method="POST" name="signup" onsubmit="return valid();">
 
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="inputBox ">
-              <div class="inputText">First Name</div>
-              <input type="text" name="firstname" class="input">
+            <div class="row">
+              <div class="col-sm-12">
+                <h1>Register</h1>
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-6">
-            <div class="inputBox">
-              <div class="inputText">Last Name</div>
-              <input type="text" name="lastname" class="input">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="inputBox ">
+                  <div class="inputText">First Name</div>
+                  <input type="text" name="firstname" class="input" required>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="inputBox">
+                  <div class="inputText">Last Name</div>
+                  <input type="text" name="lastname" class="input" required>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="inputBox">
-              <div class="inputText">Email</div>
-              <input type="text" name="emailid" class="input">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="inputBox">
+                  <div class="inputText">Email</div>
+                  <input type="text" name="emailid" class="input" required>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="inputBox">
+                  <div class="inputText">Mobile</div>
+                  <input type="text" name="mobileno" class="input" required>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-6">
-            <div class="inputBox">
-              <div class="inputText">Mobile</div>
-              <input type="text" name="mobileno" class="input">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="inputBox">
+                  <div class="inputText">Username</div>
+                  <input type="text" name="username" class="input" required>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="inputBox">
-              <div class="inputText">Username</div>
-              <input type="text" name="username" class="input">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="inputBox">
+                  <div class="inputText">New Password</div>
+                  <input type="password" name="password" class="input" required>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="inputBox">
-              <div class="inputText">New Password</div>
-              <input type="password" name="password" class="input">
+            <div class="row">
+              <div class="col-sm-12">
+                <input type="submit" name="signup" id="submit" class="btn btn-outline-primary btn-block" value="Signup" required>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
-
-        <div class="row">
-          <div class="col-sm-12">
-            <input type="submit" name="signup" id="submit" class="btn btn-outline-primary btn-block" value="Signup">
-          </div>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
 </div>
-
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.js" type="text/javascript"></script>
