@@ -43,9 +43,9 @@ if(isset($_POST['login']))
 
 
 </head>
-<body style="background-color: #DCDCDC"> 
+<body style="background-color: #fff9ae"> 
   <div class="container">
-    <header style="background-color: #DCDCDC">
+    <header style="background-color: #fff9ae">
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="twitter" role="navigation">
@@ -70,8 +70,7 @@ if(isset($_POST['login']))
             <div class="form-group">
               <input class="form-control" type="password" name="password" placeholder="Password" required />
             </div>
-
-            <input type="submit" class="btn btn-primary" name="login" value="Submit" />
+            <input type="submit" class="btn-submit" name="login" value="Submit" />
             <label><input type="checkbox"> Remember me</label>
           </form>
           <p>New to Twittie? <a href="register.php">Sign up now</a></p>   

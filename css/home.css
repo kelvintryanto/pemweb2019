@@ -38,8 +38,8 @@ ul {
 	align-items: center;
 	padding: 0 10px;
 	border-radius: 5px;
-	color: rgba(117,117,117 ,1);
-	box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+	/*box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);*/
+	color: #a98600;
 }
 .twitter li {
 	cursor: pointer;
@@ -73,7 +73,8 @@ ul {
 	width: 50px
 	font-size: 1em;
 	border: 0;
-	background: rgba(85,172,238 ,1);
+	/*background: rgba(85,172,238 ,1);*/
+	background: rgba(248,237,98 ,1); 
 	color: #fff;
 	border-radius: 50px;
 }
@@ -91,8 +92,9 @@ ul {
 	text-align: center;
 	font-size: 1em;
 	border: 0;
-	background: rgba(85,172,238 ,1);
-	color: #fff;
+	/*background: rgba(85,172,238 ,1);*/
+	background: rgba(248,237,98 ,1); 
+	color: #ffffff;
 	border-radius: 50px;
 }
 
