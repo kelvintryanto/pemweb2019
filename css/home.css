@@ -38,8 +38,8 @@ ul {
 	align-items: center;
 	padding: 0 10px;
 	border-radius: 5px;
-	color: rgba(117,117,117 ,1);
-	box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+	/*box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);*/
+	color: #a98600;
 }
 .twitter li {
 	cursor: pointer;
@@ -73,9 +73,33 @@ ul {
 	width: 50px
 	font-size: 1em;
 	border: 0;
-	background: rgba(85,172,238 ,1);
-	color: #fff;
+	background-color:#fae85d;
+	color: #ab8e38;
 	border-radius: 50px;
+}
+
+/*.tweeting-button {
+	background-color:#fae85d;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	border:1px solid #e0d900;
+	display:inline-block;
+	cursor:pointer;
+	color:#ab8e38;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:11px 20px;
+	text-decoration:none;
+}*/
+
+.tweeting li:hover {
+	background-color:#ffcb78;
+}
+.tweeting li:active {
+	position:relative;
+	top:1px;
 }
 
 .tweeting input{
@@ -91,10 +115,19 @@ ul {
 	text-align: center;
 	font-size: 1em;
 	border: 0;
-	background: rgba(85,172,238 ,1);
-	color: #fff;
+	background: rgba(248,237,98 ,1);
+	color: #ab8e38;
 	border-radius: 50px;
 }
+
+.tweeting button:hover {
+	background-color:#ffcb78;
+}
+.tweeting button:active {
+	position:relative;
+	top:1px;
+}
+
 
 .link
 {
@@ -111,11 +144,14 @@ ul {
 .thumbnail img{
 	border-radius: 50%;
 	width: 50px;
+	border: 3px solid #fae85d;
 }
 
 .card {
 	margin-bottom: 10px;
 	padding-bottom: 5px;
+	border: none;
+	/*border: 100px solid #fff9ae;*/
 }
 .card>.card-header:after,.card>.card-header:before{
 	position:absolute;
@@ -125,9 +161,17 @@ ul {
 	height:0;
 	display:block;
 	content:" ";
+	color: #fae85d;
 	border-color:transparent;
 	border-style:solid solid outset;
 	pointer-events:none;
+}
+
+.card>.card-header{
+	padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fae85d;
+    border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
 .card>.card-body{
@@ -150,8 +194,8 @@ ul {
 }
 
 .profpic {
-	padding-bottom: 10px;
-	padding-top: 10px;
+	padding-bottom: 6px;
+	padding-top: 13px;
 }
 
 .center-block {
@@ -169,6 +213,7 @@ ul {
 	position: inline-block;
     text-align: center;
     width: 100px;
+    border: 5px solid #ffffff;
 }
 
 .no-padding{
