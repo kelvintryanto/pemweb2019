@@ -1,4 +1,4 @@
-<!-- FARIZ & DIKA YANG NGERJAIN -->
+<!-- ARKKA YANG NGERJAIN -->
 
 <!DOCTYPE html>
 <html>

@@ -67,51 +67,6 @@ if(isset($_POST['login']))
       <div class="row">
         <div class="col-sm-2"></div>
         <div class="card col-sm-8" style="padding: 10px;">
-<<<<<<< HEAD
-          <div class="container">
-            <div class="formBox">
-
-              <form method="POST" name="signup" onsubmit="return valid();">
-
-                <div style="margin-bottom: 20px;" class="row">
-                  <div class="col-sm-12">
-                    <h4><b>Log in to Twittie</b></h4>
-                  </div>
-                </div>
-
-
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="inputBox">
-                      <div class="inputText">First Name</div>
-                      <input type="text" name="username" class="input" required>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-12">
-                    <div class="inputBox">
-                      <div class="inputText">Last Name</div>
-                      <input type="password" name="password" class="input" required>
-                    </div>
-                  </div>
-                </div>
-
-
-                <!--<div class="form-group">
-                  <input class="form-control" type="password" name="password" placeholder="Password" required />
-                </div> -->
-
-
-                <input type="submit" class="btn btn-primary" name="login" value="Submit" />
-                <label><input type="checkbox"> Remember me</label>
-              </form>
-
-              <p>New to Twittie? <a href="register.php">Sign up now</a></p>   
-            </div>
-          </div>
-=======
           <h4><b>Log in to Twittie</b></h4>
           <form method="POST">
             <div class="form-group">
@@ -124,7 +79,6 @@ if(isset($_POST['login']))
             <label><input type="checkbox"> Remember me</label>
           </form>
           <p>New to Twittie? <a href="register.php">Sign up now</a></p>   
->>>>>>> 9933e4a78f4af4f1014e8079023cb0ad33b39823
         </div>
 
       </div>

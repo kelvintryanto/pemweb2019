@@ -60,31 +60,25 @@ if(isset($_POST['login']))
   </header>
 
   <section>
-
     <div class="container">
+      <div class="row col-md-12">
+        <img src="img/tweety.png" style="text-align: right; height: 100px;">
+        <!-- <p><b>Join Twitter today.</b></p> -->
+        <div class="col-md-10" style="text-align: left;">
+          <h1>See what’s happening in the world right now</h1>
+        </div>
+      </div>
+
+
+
 
       <div class="row col-md-12">
-
-          <img class="col-md-2" src="img/tweety.png" height="100%" style="align-items: right">
-         <!-- <p><b>Join Twitter today.</b></p> -->
-
-
-
-       <div class="col-md-10" style="text-align: left;">
-        <h1>See what’s happening in the world right now</h1>
+        <a href="register.php" class="btn btn-primary">Sign Up</a> 
+        <a href="login.php" class="btn btn-outline-primary">Log in</a>
       </div>
+
     </div>
-
-
-
-
-    <div class="row col-md-12">
-      <a href="register.php" class="btn btn-primary">Sign Up</a> 
-      <a href="login.php" class="btn btn-outline-primary">Log in</a>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
