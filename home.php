@@ -1,9 +1,17 @@
 <?php 
+// UNTUK LOGOUT
 if(isset($_POST['logout'])){
   session_unset();
 
   echo "<script>alert('Log Out Success!'); document.location='index.php'</script>";
 }
+
+
+// UNTUK SEARCH
+if(isset($_POST['search'])){
+  echo "<script>document.location='searchtweet.php'</script>";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +64,11 @@ if(isset($_POST['logout'])){
                 <img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
               </a>
             </li>
-            <li><form><input placeholder=" search twitter"/> <i class="fa fa-search"></i></form></li>
+            <li>
+              <form method="post">
+                <input name="search" placeholder=" search twitter"/><i class="fa fa-search"></i>
+              </form>
+            </li>
             <li class="btn-group">
               <i class="fa fa-user-circle" data-toggle="dropdown"></i>
               <div class="dropdown-menu dropdown-menu-right">
