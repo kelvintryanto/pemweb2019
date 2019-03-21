@@ -1,8 +1,15 @@
 <?php 
+// UNTUK LOGOUT
 if(isset($_POST['logout'])){
-	session_unset();
+  session_unset();
 
-	echo "<script>alert('Log Out Success!'); document.location='index.php'</script>";
+  echo "<script>alert('Log Out Success!'); document.location='index.php'</script>";
+}
+
+
+// UNTUK SEARCH
+if(isset($_POST['search'])){
+  echo "<script>document.location='searchtweet.php'</script>";
 }
 ?>
 
@@ -13,7 +20,9 @@ if(isset($_POST['logout'])){
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Twittie</title>
+	<link id="favicon" rel="shortcut icon" href="img/Twittie-Bird-icon.png" type="image/png">
+	<title>Twittie | Edit My Profile</title>
+
 
 	<!-- CUSTOM CSS -->
 	<link rel="stylesheet" type="text/css" href="css/home.css">
@@ -56,7 +65,11 @@ if(isset($_POST['logout'])){
 								<img style="height: 50px; width: 50px;" src="img/Twittie-Bird-icon.png">
 							</a>
 						</li>
-						<li><form><input placeholder=" search twitter"/> <i class="fa fa-search"></i></form></li>
+						<li>
+							<form method="post">
+								<input name="search" placeholder=" search twitter"/><i class="fa fa-search"></i>
+							</form>
+						</li>
 						<li class="btn-group">
 							<i class="fa fa-user-circle" data-toggle="dropdown"></i>
 							<div class="dropdown-menu dropdown-menu-right">
@@ -67,10 +80,10 @@ if(isset($_POST['logout'])){
 								</button>
 								<button class="dropdown-item" type="button">
 									<a href="editprofile.php">
-										<div class="link"><i class="fas fa-edit" style="font-size: 1rem;"></i> Edit Profile</div>
+										<div class="link"><i class="fas fa-edit" style="font-size: 1rem;"></i>Edit Profile</div>
 									</a>
 								</button>
-								<div class="dropdown-divider"></div>
+								<div class="dropdown-divider"></div>      
 								<form method="post">
 									<button  class="dropdown-item" type="submit" name="logout" style="font-size: 1rem;">
 										<i class="fas fa-sign-out-alt"></i>Logout
