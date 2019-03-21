@@ -88,7 +88,7 @@
                 </form>
               </div>
             </li>
-            <li><button class="btn" data-toggle="modal" data-target="#statusModal"> Tweet </button></li>
+            <!-- <li><button class="btn" data-toggle="modal" data-target="#statusModal"> Tweet </button></li> -->
           </ul>
         </nav>
       </div>      
@@ -100,10 +100,15 @@
   		</div>
 
 
-  		<div class="row">
+  		<div class="row col-sm-12">
         	<div class="card col-sm-5 card-result">
-            	Container Left
+            	<div class="profpic-search">
+            		<img style="cursor: pointer;" class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">	
+          			<h5>ini begimana biar bisa di kanan profile pic nya buat ngisi nama,first&lastname, noHP</h5>
+          		</div>
         	</div>
+
+        	<div class"col-sm-2"></div>
 
         	<div class="card col-sm-5 card-result">
             	Container Right
