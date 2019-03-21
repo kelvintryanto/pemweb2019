@@ -248,10 +248,8 @@ else
 
 <div class="col-sm-12">
 <tr>
-   <tr>
- <td>Jenis Kelamin</td>
- <td>:</td>
- <td><input type=radio name=JK value=Laki-laki>Laki-laki<input type=radio name=JK value=Perempuan>Perempuan</td>
+<tr>
+ <td><input style="margin-top: 20px;" type=radio name=JK value=Laki-laki>Laki-laki<input type=radio name=JK value=Perempuan>Perempuan</td>
 </tr>
 </tr>
 </div>
@@ -262,7 +260,7 @@ else
 
           <div class="row">
             <div class="col-sm-12">
-              <input type="submit" name="signup" id="submit" class="btn btn-outline-primary btn-block" value="Signup" required>
+              <input style="margin-top: 20px;" type="submit" name="signup" id="submit" class="btn btn-outline-primary btn-block" value="Signup" required>
             </div>
           </div>
         </form>
