@@ -3,7 +3,6 @@ body{
 	padding: 0;
 }
 .formBox{
-	margin-top: 90px;
 	padding: 50px;
 }
 .formBox  h1{
@@ -42,7 +41,6 @@ body{
 	font-size: 18px;
 	opacity: 1;
 	color: #00bcd4;
-
 }
 
 textarea{

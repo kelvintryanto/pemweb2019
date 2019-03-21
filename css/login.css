@@ -1,3 +1,4 @@
+
 .custom-navbar{box-shadow: 10px 10px 10px #eee; z-index:;background-color: #fff;}
 .nav-link{color: gray!important;}
 .custom-toggler.navbar-toggler {border-color: rgb(247,32,78);}
@@ -6,3 +7,57 @@
 .custom-toggler:hover{border-color: rgb(255,255,255); background-color: #f76a88;}
 .navbar-toggler-icon:hover{background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");}#logo_custom{margin-top: -6px;}
 @media only screen and (max-width: 760px) { #logo_custom{width: 40%;}}
+
+
+.inputBox{
+	position: relative;
+	box-sizing: border-box;
+	margin-bottom: 50px;
+}
+.inputBox .inputText{
+	position: absolute;
+    font-size: 24px;
+    line-height: 50px;
+    transition: .5s;
+    opacity: .5;
+}
+.inputBox .input{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background: transparent;
+	border: none;
+    outline: none;
+    font-size: 24px;
+    border-bottom: 1px solid rgba(0,0,0,.5);
+
+}
+.focus .inputText{
+	transform: translateY(-30px);
+	font-size: 18px;
+	opacity: 1;
+	color: #00bcd4;
+}
+
+.btn-submit {
+	background-color:#fff34f;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #e0d900;
+	display:inline-block;
+	cursor:pointer;
+	color:#ab8e38;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:6px 10px;
+	text-decoration:none;
+}
+.btn-submit:hover {
+	background-color:#ffcb78;
+}
+.btn-submit:active {
+	position:relative;
+	top:1px;
+}
