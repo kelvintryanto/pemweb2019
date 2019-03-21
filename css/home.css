@@ -252,3 +252,10 @@ header.sticky {
 	border: 0;
 	border-radius: 50px;
 }
+
+.card-result{
+	padding: 40px;
+	margin: 10px;
+	display: flex;
+	text-align: center;
+}
