@@ -38,7 +38,7 @@ ul {
 	align-items: center;
 	padding: 0 10px;
 	border-radius: 5px;
-	/*box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);*/
+	box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
 	color: #a98600;
 }
 .twitter li {

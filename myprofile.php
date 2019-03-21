@@ -13,7 +13,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Twittie</title>
+	<title>Twittie | My Profile</title>
+	<link id="favicon" rel="shortcut icon" href="img/Twittie-Bird-icon.png" type="image/png">
 
 	<!-- CUSTOM CSS -->
 	<link rel="stylesheet" type="text/css" href="css/home.css">
