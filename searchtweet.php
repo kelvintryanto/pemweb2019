@@ -100,17 +100,18 @@
   		</div>
 
 
-  		<div class="row col-sm-12">
-        	<div class="card col-sm-5 card-result">
-            	<div class="profpic-search">
+  		<div style="margin: 0;" class="row col-sm-12">
+        	<div style="margin: 0;" class="col-sm-6 card-result">
+  				<div style="padding: 10px;" class="card col-12">
+				  <div class="profpic-search">
+				  
             		<img style="cursor: pointer;" class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">	
-          			<h5>ini begimana biar bisa di kanan profile pic nya buat ngisi nama,first&lastname, noHP</h5>
-          		</div>
+          		a
+				  </div>
+				  </div>
         	</div>
 
-        	<div class"col-sm-2"></div>
-
-        	<div class="card col-sm-5 card-result">
+        	<div style="padding: 10px; margin: 0;" class="card col-sm-6 card-result">
             	Container Right
         	</div>
     	</div> 
