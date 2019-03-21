@@ -249,7 +249,9 @@ else
 <div class="col-sm-12">
 <tr>
 <tr>
- <td><input style="margin-top: 20px;" type=radio name=JK value=Laki-laki>Laki-laki<input type=radio name=JK value=Perempuan>Perempuan</td>
+ <td>
+  <input style="margin-top: 20px;" type=radio name=JK value=Laki-laki>Laki-laki
+  <input style="margin-left: 20px" type=radio name=JK value=Perempuan>Perempuan</td>
 </tr>
 </tr>
 </div>
