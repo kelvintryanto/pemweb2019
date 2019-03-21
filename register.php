@@ -5,20 +5,17 @@ include('config.php');
 error_reporting(0);
 if(isset($_POST['signup']))
 {
-  $fname=$_POST['firstname'];
-  $lname=$_POST['lastname'];
-  $email=$_POST['emailid']; 
-  $mobile=$_POST['mobileno'];
   $username=$_POST['username'];
-  $password=md5($_POST['password']); 
-  $sql="INSERT INTO  users(firstname,lastname,email,mobile,username,password) VALUES(:fname,:lname,:email,:mobile,:username,:password)";
+  $password=md5($_POST['password']);
+  $fname=$_POST['first_name']; 
+  $lname=$_POST['last_name'];
+  $profile_image=$_POST['profile_image'];
+  $sql="INSERT INTO  users(username, password, first_name, last_name) VALUES(:username,:password,:first_name,:last_name)";
   $query = $dbh->prepare($sql);
-  $query->bindParam(':fname',$fname,PDO::PARAM_STR);
-  $query->bindParam(':lname',$lname,PDO::PARAM_STR);
-  $query->bindParam(':email',$email,PDO::PARAM_STR);
-  $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
   $query->bindParam(':username',$username,PDO::PARAM_STR);
   $query->bindParam(':password',$password,PDO::PARAM_STR);
+  $query->bindParam(':first_name',$fname,PDO::PARAM_STR);
+  $query->bindParam(':last_name',$lname,PDO::PARAM_STR);
   $query->execute();
   $lastInsertId = $dbh->lastInsertId();
   if($lastInsertId)
@@ -74,49 +71,33 @@ if(isset($_POST['signup']))
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="inputBox ">
-                            <div class="inputText">First Name</div>
-                            <input type="text" name="firstname" class="input">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="inputBox">
-                            <div class="inputText">Last Name</div>
-                            <input type="text" name="lastname" class="input">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="inputBox">
-                            <div class="inputText">Email</div>
-                            <input type="text" name="emailid" class="input">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="inputBox">
-                            <div class="inputText">Mobile</div>
-                            <input type="text" name="mobileno" class="input">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="inputBox">
                             <div class="inputText">Username</div>
                             <input type="text" name="username" class="input">
                         </div>
                     </div>
+
+                    <div class="col-sm-6">
+                        <div class="inputBox">
+                            <div class="inputText">Password</div>
+                            <input type="password" name="password" class="input">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="inputBox">
-                            <div class="inputText">New Password</div>
-                            <input type="password" name="password" class="input">
+                            <div class="inputText">First Name</div>
+                            <input type="text" name="first_name" class="input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="inputBox">
+                            <div class="inputText">Last Name</div>
+                            <input type="text" name="last_name" class="input">
                         </div>
                     </div>
                 </div>
