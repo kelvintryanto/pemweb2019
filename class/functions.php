@@ -2,8 +2,8 @@
  class  Main{
   //login function 
   public function login($username,$password){
-   global $pdo;
-    $query = $pdo->prepare("SELECT * from users WHERE username = ? and password = ?");
+   global $dbh;
+    $query = $dbh->prepare("SELECT * from users WHERE username = ? and password = ?");
    $query->bindValue(1,$username);
    $query->bindValue(2,$password);
    $query->execute();
@@ -24,18 +24,18 @@
   }
   //fetching posts from database
   public function posts(){
-   global $pdo;
-   $query = $pdo->prepare("SELECT * FROM `posts`,`users` WHERE user_id = user_id_p ORDER BY `post_id` DESC");
+   global $dbh;
+   $query = $dbh->prepare("SELECT * FROM `posts`,`users` WHERE id = user_id_p ORDER BY `post_id` DESC");
    $query->execute();
    return $query->fetchAll();
   }
   //add new post if user post 
   public function add_post($user_id,$status,$file_parh){
-   global $pdo; 
+   global $dbh; 
    if(empty($file_parh)){
     $file_parh = 'NULL';
    }
-   $query = $pdo->prepare('INSERT INTO `posts` (`post_id`, `user_id_p`, `status`, `status_image`, `status_time`) VALUES (NULL, ?, ?,?,  CURRENT_TIMESTAMP)');
+   $query = $dbh->prepare('INSERT INTO `posts` (`post_id`, `user_id_p`, `status`, `status_image`, `status_time`) VALUES (NULL, ?, ?,?,  CURRENT_TIMESTAMP)');
    $query->bindValue(1,$user_id);
    $query->bindValue(2,$status);
    $query->bindValue(3,$file_parh);
@@ -44,8 +44,8 @@
   }
   //fetch user data by user id 
   public function user_data($user_id){
-   global $pdo;
-   $query = $pdo->prepare('SELECT * FROM users WHERE user_id = ?');
+   global $dbh;
+   $query = $dbh->prepare('SELECT * FROM users WHERE id = ?');
    $query->bindvalue(1,$user_id);
    $query->execute();
 

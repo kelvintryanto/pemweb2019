@@ -12,6 +12,47 @@ if(isset($_POST['search'])){
   echo "<script>document.location='searchtweet.php'</script>";
 }
 
+include 'core/main.php';
+$check  = new Main;
+$get    = new Main;
+$send   = new Main;
+
+@$user_id = $_SESSION['user_id'];
+    //fetching user data by user_id
+$data  = $get->user_data($user_id);
+ // fetching posts from database
+$post  = $get->posts();
+ //check user submit  data
+if(isset($_POST['submit'])){
+  $status  = $_POST['status'];
+  //checking image if isset
+  if (isset($_FILES['post_image'])===true) {
+   //if image is not empty 
+    if (empty($_FILES['post_image']['name']) ===true) {
+      if(!empty($status)===true){
+       $send->add_post($user_id,$status);
+     }
+   }else {
+      //checking image format                                                                                                       
+     $allowed = array('jpg','jpeg','gif','png'); 
+     $file_name = $_FILES['post_image']['name']; 
+     $file_extn = strtolower(end(explode('.', $file_name)));
+     $file_temp = $_FILES['post_image']['tmp_name'];
+
+     if (in_array($file_extn, $allowed)===true) {
+      $file_parh = 'img/' . substr(md5(time()), 0, 10).'.'.$file_extn;
+      move_uploaded_file($file_temp, $file_parh);
+      $send->add_post($user_id,$status,$file_parh);
+
+    }else{
+      echo 'incorrect File only Allowed with less then 1mb ';
+      echo implode(', ', $allowed);
+    }
+  }
+
+}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -131,75 +172,71 @@ if(isset($_POST['search'])){
               </div>
               <div class="card-body" >
                 <form class="tweeting" method="post">
-                  <div id="buatStatus">
-                    <input class="col-sm-9" name="status" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'" >
-                    <button style="margin-top: auto;margin-bottom: auto;"class="btn col-sm-2">Tweet</button>
-                  </div>
-                  <div style="cursor:pointer;" class="col-2">
-                    <i class="fas fa-images" style="font-size: 1rem;"> Media</i>
-                  </div>
-                </form>
-              </div><!-- /card-body -->
-            </div><!-- /card -->
-          </div><!-- /col-sm-10 -->
-        </div><!-- /row col-12-->
+                  <div id="addMedia">
+                   <img src="#" id="preview" style="display: none;" />
+                 </div>
+                 <div id="buatStatus">
+                  <input class="col-sm-9" name="status" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'" >
+                  <button style="margin-top: auto;margin-bottom: auto;"class="btn col-sm-2">Tweet</button>
+                </div>
+                <div style="cursor:pointer;" class="col-2">
+                  <input type="file"  onchange="readURL(this);" style="display:none;" name="post_image" id="uploadFile">
+                  <i class="fas fa-images" style="font-size: 1rem;" id="uploadTrigger" name="post_image"> Media</i>
 
-        <!-- TIMELINE 1-->
-        <div style="padding: 0;" class="row col-12">
-          <div style="padding-left: 0;" class="col-sm-1">
-            <div style="border: 0;" class="thumbnail">
-              <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-            </div><!-- /thumbnail -->
-          </div><!-- /col-sm-1 -->
+                  <!-- IMAGE PREVIEW -->
+                  <script type="text/javascript">
+                    $("#uploadTrigger").click(function(){
+                      $("#uploadFile").click();
+                    });
+                    function readURL(input) {
+                      if (input.files && input.files[0]) {
+                        var reader = new FileReader();
 
-          <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
-            <div class="card">
-              <div class="card-header">
-                <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
-              </div>
-              <div class="card-body">
-                <form>
-                  <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
-                  <div class="col-sm-12">
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
-                    <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
-                  </div> <!-- /col-sm-12 -->
-                </form>           
-              </div><!-- /card-body -->
-            </div><!-- /card -->
-          </div><!-- /col-sm-10 -->
-        </div><!-- /r ow col-12-->
-        <!-- END TIMELINE 1-->
+                        reader.onload = function (e) {
+                          $('#preview').css('display','');
+                          $('#addMedia').show();
+                          $('#preview').attr('src', e.target.result);
+                        }
 
-        <!-- TIMELINE 2-->
-        <div style="padding: 0;" class="row col-12">
-          <div style="padding-left: 0;" class="col-sm-1">
-            <div style="border: 0;" class="thumbnail">
-              <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
-            </div><!-- /thumbnail -->
-          </div><!-- /col-sm-1 -->
-
-          <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
-            <div class="card">
-              <div class="card-header">
-                <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
-              </div>
-              <div class="card-body">
-                <form>
-                 <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
-                 <div class="col-sm-12">
-                  <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
-                  <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
-                  <a href="#"><i style="text-align: center;" class="fas fa-flag col-sm-3" name="comments">Comments(0)</i></a>
-                </div> <!-- /col-sm-12 -->
-              </form>                  
+                        reader.readAsDataURL(input.files[0]);
+                      }
+                    }
+                  </script>
+                </div>
+              </form>
             </div><!-- /card-body -->
           </div><!-- /card -->
-        </div><!-- /col-sm-10 -->              
+        </div><!-- /col-sm-10 -->
       </div><!-- /row col-12-->
-      <!-- END TIMELINE 2-->
 
-      <!-- TIMELINE 3-->
+      <!-- TIMELINE 1-->
+      <div style="padding: 0;" class="row col-12">
+        <div style="padding-left: 0;" class="col-sm-1">
+          <div style="border: 0;" class="thumbnail">
+            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+          </div><!-- /thumbnail -->
+        </div><!-- /col-sm-1 -->
+
+        <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
+          <div class="card">
+            <div class="card-header">
+              <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
+            </div>
+            <div class="card-body">
+              <form>
+                <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
+                <div class="col-sm-12">
+                  <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
+                  <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
+                </div> <!-- /col-sm-12 -->
+              </form>           
+            </div><!-- /card-body -->
+          </div><!-- /card -->
+        </div><!-- /col-sm-10 -->
+      </div><!-- /r ow col-12-->
+      <!-- END TIMELINE 1-->
+
+      <!-- TIMELINE 2-->
       <div style="padding: 0;" class="row col-12">
         <div style="padding-left: 0;" class="col-sm-1">
           <div style="border: 0;" class="thumbnail">
@@ -218,16 +255,16 @@ if(isset($_POST['search'])){
                <div class="col-sm-12">
                 <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
                 <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
-                <a href="#"><i style="text-align: center;" class="fas fa-heart col-sm-2" name="like"> Like</i></a>
+                <a href="#"><i style="text-align: center;" class="fas fa-flag col-sm-3" name="comments">Comments(0)</i></a>
               </div> <!-- /col-sm-12 -->
             </form>                  
           </div><!-- /card-body -->
         </div><!-- /card -->
-      </div><!-- /col-sm-10 -->
-    </div><!-- /r ow col-12-->
-    <!-- END TIMELINE 3-->
+      </div><!-- /col-sm-10 -->              
+    </div><!-- /row col-12-->
+    <!-- END TIMELINE 2-->
 
-    <!-- TIMELINE 4-->
+    <!-- TIMELINE 3-->
     <div style="padding: 0;" class="row col-12">
       <div style="padding-left: 0;" class="col-sm-1">
         <div style="border: 0;" class="thumbnail">
@@ -246,15 +283,16 @@ if(isset($_POST['search'])){
              <div class="col-sm-12">
               <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
               <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
+              <a href="#"><i style="text-align: center;" class="fas fa-heart col-sm-2" name="like"> Like</i></a>
             </div> <!-- /col-sm-12 -->
           </form>                  
         </div><!-- /card-body -->
       </div><!-- /card -->
     </div><!-- /col-sm-10 -->
   </div><!-- /r ow col-12-->
-  <!-- END TIMELINE 4-->
+  <!-- END TIMELINE 3-->
 
-  <!-- TIMELINE 5-->
+  <!-- TIMELINE 4-->
   <div style="padding: 0;" class="row col-12">
     <div style="padding-left: 0;" class="col-sm-1">
       <div style="border: 0;" class="thumbnail">
@@ -278,6 +316,33 @@ if(isset($_POST['search'])){
       </div><!-- /card-body -->
     </div><!-- /card -->
   </div><!-- /col-sm-10 -->
+</div><!-- /r ow col-12-->
+<!-- END TIMELINE 4-->
+
+<!-- TIMELINE 5-->
+<div style="padding: 0;" class="row col-12">
+  <div style="padding-left: 0;" class="col-sm-1">
+    <div style="border: 0;" class="thumbnail">
+      <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+    </div><!-- /thumbnail -->
+  </div><!-- /col-sm-1 -->
+
+  <div style="padding: 0; margin-left: -5px;" class="col-sm-11">
+    <div class="card">
+      <div class="card-header">
+        <strong>@selectusername</strong> <span class="text-muted">commented 5 days ago</span>
+      </div>
+      <div class="card-body">
+        <form>
+         <p style="padding: 0; margin-bottom: 10px; border-bottom: 1px solid #ddd;" class="col-sm-12">Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...Select comment from comment table for each user...</p>
+         <div class="col-sm-12">
+          <i style="text-align: center; cursor: pointer;" class="fas fa-reply col-sm-2" name="reply" data-toggle="modal" data-target="#replyModal"> Reply</i>
+          <i style="text-align: center; cursor: pointer;" class="fas fa-trash col-sm-2" name="delete" data-toggle="modal" data-target="#deleteModal"> Delete</i>
+        </div> <!-- /col-sm-12 -->
+      </form>                  
+    </div><!-- /card-body -->
+  </div><!-- /card -->
+</div><!-- /col-sm-10 -->
 </div><!-- /r ow col-12-->
 <!-- END TIMELINE 5-->
 </div> <!-- /row col-sm-9 -->

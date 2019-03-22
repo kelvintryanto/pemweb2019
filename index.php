@@ -5,18 +5,18 @@ if(isset($_POST['login']))
 {
   $username=$_POST['username'];
   $password=md5($_POST['password']);
-  $sql ="SELECT username,password,firstname FROM users WHERE username=:username and password=:password";
+  $sql ="SELECT firstname FROM users WHERE username=:username and password=:password";
   $query= $dbh -> prepare($sql);
   $query-> bindParam(':username', $username, PDO::PARAM_STR);
   $query-> bindParam(':password', $password, PDO::PARAM_STR);
   $query-> execute();
   $results=$query->fetchAll(PDO::FETCH_OBJ);
-  if($query->rowCount() > 0)
+  if($query->rowCount())
   {
     $_SESSION['login']=$_POST['username'];
-    // $_SESSION['fname']=$results->firstname;
+    $_SESSION['firstname']=$results->firstname;
     $currentpage=$_SERVER['REQUEST_URI'];
-    echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
+    echo "<script type='text/javascript'>document.location = 'home.php'; </script>";
   } else{
 
     echo "<script>alert('Invalid Username or Password');</script>";
