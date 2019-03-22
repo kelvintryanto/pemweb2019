@@ -136,7 +136,7 @@ ul {
 
 .thumbnail img{
 	border-radius: 50%;
-	width: 50px;
+	width: 100%;
 	border: 3px solid #fae85d;
 }
 
@@ -275,4 +275,17 @@ header.sticky {
 	margin: 10px;
 	display: flex;
 	text-align: center;
+}
+
+/*BUAT STATUS*/
+#buatStatus{
+	display:flex; 
+	padding-bottom:10px;
+	margin-bottom: 10px; 
+	border-bottom: 1px solid #ddd;
+}
+
+.center-flex{
+	margin-top: auto;
+	margin-bottom: auto;
 }

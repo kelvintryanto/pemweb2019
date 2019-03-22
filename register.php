@@ -10,7 +10,7 @@ if(isset($_POST['signup']))
   $email=$_POST['emailid']; 
   $mobile=$_POST['mobileno'];
   $username=$_POST['username'];
-  $password=md5($_POST['password']); 
+  $password=md5($_POST['password']);
   $sql="INSERT INTO  users(firstname,lastname,email,mobile,username,password) VALUES(:fname,:lname,:email,:mobile,:username,:password)";
   $query = $dbh->prepare($sql);
   $query->bindParam(':fname',$fname,PDO::PARAM_STR);

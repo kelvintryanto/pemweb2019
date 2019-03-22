@@ -66,7 +66,7 @@ if(isset($_POST['search'])){
             </li>
             <li>
               <form method="post">
-                <input name="search" placeholder=" search twitter"/><i class="fa fa-search"></i>
+                <input name="search" placeholder=" search twitter"/> <i class="fa fa-search"></i>
               </form>
             </li>
             <li class="btn-group">
@@ -99,7 +99,7 @@ if(isset($_POST['search'])){
     <!-- TEMPAT PROFIL -->
     <div style="margin: 0;padding: 0;" class="row col-sm-12">
       <div style="text-align: center; margin: 0; margin-right: 10px; " class="row col-3 center-block">
-        <div style="height:165px; background: #fae85d; border-radius: 10px; padding: 0 10px 10px 10px;" class="card">
+        <div style="height:165px; width:100%; background: #fae85d; border-radius: 10px; padding: 0 10px 10px 10px;" class="card">
           <div class="profpic">
             <img style="cursor: pointer;" class="img-responsive user-photo center-block" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
           </div><!-- /thumbnail -->
@@ -129,10 +129,15 @@ if(isset($_POST['search'])){
               <div class="card-header">
                 <strong>@selectusername</strong>
               </div>
-              <div class="card-body">
+              <div class="card-body" >
                 <form class="tweeting" method="post">
-                  <input class="col-sm-9" type="" name="status" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'">
-                  <button class="btn col-sm-2">Tweet</button>
+                  <div id="buatStatus">
+                    <input class="col-sm-9" name="status" placeholder="Select comment from comment table for each user..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Select comment from comment table for each user...'" >
+                    <button style="margin-top: auto;margin-bottom: auto;"class="btn col-sm-2">Tweet</button>
+                  </div>
+                  <div style="cursor:pointer;" class="col-2">
+                    <i class="fas fa-images" style="font-size: 1rem;"> Media</i>
+                  </div>
                 </form>
               </div><!-- /card-body -->
             </div><!-- /card -->
