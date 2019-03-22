@@ -2,8 +2,8 @@
  class  Main{
   //login function 
   public function login($username,$password){
-   global $dbh;
-    $query = $dbh->prepare("SELECT * from users WHERE username = ? and password = ?");
+   global $pdo;
+    $query = $pdo->prepare("SELECT * from users WHERE username = ? and password = ?");
    $query->bindValue(1,$username);
    $query->bindValue(2,$password);
    $query->execute();
@@ -11,7 +11,7 @@
 
     if($rows > 0){
      $_SESSION['user_id'] = $rows[0];
-     header('Location: timeline.php');
+     header('Location: home.php');
      exit();   
      }else{
        echo  'Username or Password is incorrect ';   
@@ -24,28 +24,28 @@
   }
   //fetching posts from database
   public function posts(){
-   global $dbh;
-   $query = $dbh->prepare("SELECT * FROM `posts`,`users` WHERE id = user_id_p ORDER BY `post_id` DESC");
+   global $pdo;
+   $query = $pdo->prepare("SELECT * FROM `posts`,`users` WHERE user_id = user_id_p ORDER BY `post_id` DESC");
    $query->execute();
    return $query->fetchAll();
   }
   //add new post if user post 
   public function add_post($user_id,$status,$file_parh){
-   global $dbh; 
+   global $pdo; 
    if(empty($file_parh)){
     $file_parh = 'NULL';
    }
-   $query = $dbh->prepare('INSERT INTO `posts` (`post_id`, `user_id_p`, `status`, `status_image`, `status_time`) VALUES (NULL, ?, ?,?,  CURRENT_TIMESTAMP)');
+   $query = $pdo->prepare('INSERT INTO `posts` (`post_id`, `user_id_p`, `status`, `status_image`, `status_time`) VALUES (NULL, ?, ?,?,  CURRENT_TIMESTAMP)');
    $query->bindValue(1,$user_id);
    $query->bindValue(2,$status);
    $query->bindValue(3,$file_parh);
    $query->execute();
-   header('location: timeline.php');
+   header('Location: home.php');
   }
   //fetch user data by user id 
   public function user_data($user_id){
-   global $dbh;
-   $query = $dbh->prepare('SELECT * FROM users WHERE id = ?');
+   global $pdo;
+   $query = $pdo->prepare('SELECT * FROM users WHERE user_id = ?');
    $query->bindvalue(1,$user_id);
    $query->execute();
 

@@ -1,12 +1,12 @@
 <?php
 session_start();
-include('config.php');
+include('connection.php');
 if(isset($_POST['login']))
 {
   $username=$_POST['username'];
   $password=md5($_POST['password']);
-  $sql ="SELECT firstname FROM users WHERE username=:username and password=:password";
-  $query= $dbh -> prepare($sql);
+  $sql ="SELECT first_name FROM users WHERE username=:username and password=:password";
+  $query= $pdo -> prepare($sql);
   $query-> bindParam(':username', $username, PDO::PARAM_STR);
   $query-> bindParam(':password', $password, PDO::PARAM_STR);
   $query-> execute();
@@ -14,7 +14,7 @@ if(isset($_POST['login']))
   if($query->rowCount())
   {
     $_SESSION['login']=$_POST['username'];
-    $_SESSION['firstname']=$results->firstname;
+    $_SESSION['first_name']=$results->first_name;
     $currentpage=$_SERVER['REQUEST_URI'];
     echo "<script type='text/javascript'>document.location = 'home.php'; </script>";
   } else{
