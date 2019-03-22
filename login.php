@@ -1,12 +1,13 @@
 <?php
 session_start();
 include('config.php');
-error_reporting(0);
 if(isset($_POST['login']))
 {
   $username=$_POST['username'];
   $password=md5($_POST['password']);
-  $sql ="SELECT username,password,first_name FROM users WHERE username=:username and password=:password";
+  $sql ="SELECT username,password,firstname FROM users WHERE username=:username and password=:password";
+
+  
   $query= $dbh -> prepare($sql);
   $query-> bindParam(':username', $username, PDO::PARAM_STR);
   $query-> bindParam(':password', $password, PDO::PARAM_STR);
@@ -17,11 +18,7 @@ if(isset($_POST['login']))
     $_SESSION['login']=$_POST['username'];
     $_SESSION['fname']=$results->firstname;
     $currentpage=$_SERVER['REQUEST_URI'];
-<<<<<<< HEAD
-    echo "<script type='text/javascript'> document.location = 'timeline.php'; </script>";
-=======
     echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
->>>>>>> d21bdfd341c88116e621f99ba6ee018e3cf98df1
   } else{
 
     echo "<script>alert('Invalid Username or Password');</script>";
@@ -105,12 +102,6 @@ if(isset($_POST['login']))
                     </div>
                   </div>
                 </div>
-
-
-                <!--<div class="form-group">
-                  <input class="form-control" type="password" name="password" placeholder="Password" required />
-                </div> -->
-
 
                 <input type="submit" class="btn-submit" name="login" value="Submit" />
                 <label><input type="checkbox"> Remember me</label>

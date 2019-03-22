@@ -18,26 +18,27 @@ if(isset($_POST['submit'])){
         if(!empty($status)===true){
            $send->add_post($user_id,$status);
        }
-   }else {
+   }else 
+   {
       //checking image format                                                                                                       
        $allowed = array('jpg','jpeg','gif','png'); 
        $file_name = $_FILES['post_image']['name']; 
        $file_extn = strtolower(end(explode('.', $file_name)));
        $file_temp = $_FILES['post_image']['tmp_name'];
 
-       if (in_array($file_extn, $allowed)===true) {
+       if (in_array($file_extn, $allowed)===true) 
+       {
           $file_parh = 'img/' . substr(md5(time()), 0, 10).'.'.$file_extn;
           move_uploaded_file($file_temp, $file_parh);
           $send->add_post($user_id,$status,$file_parh);
 
-      }else{
+      }else
+      {
           echo 'incorrect File only Allowed with less then 1mb ';
           echo implode(', ', $allowed);
       }
   }
-
 }
-
 }
 ?>
 

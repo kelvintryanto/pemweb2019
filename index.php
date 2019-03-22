@@ -1,12 +1,11 @@
 <?php
 session_start();
 include('config.php');
-error_reporting(0);
 if(isset($_POST['login']))
 {
   $username=$_POST['username'];
   $password=md5($_POST['password']);
-  $sql ="SELECT username,password,first_name FROM users WHERE username=:username and password=:password";
+  $sql ="SELECT username,password,firstname FROM users WHERE username=:username and password=:password";
   $query= $dbh -> prepare($sql);
   $query-> bindParam(':username', $username, PDO::PARAM_STR);
   $query-> bindParam(':password', $password, PDO::PARAM_STR);
@@ -15,15 +14,10 @@ if(isset($_POST['login']))
   if($query->rowCount() > 0)
   {
     $_SESSION['login']=$_POST['username'];
-    $_SESSION['fname']=$results->firstname;
+    // $_SESSION['fname']=$results->firstname;
     $currentpage=$_SERVER['REQUEST_URI'];
-<<<<<<< HEAD
-    echo "<script type='text/javascript'> document.location = 'timeline.php'; </script>";
-} else{
-=======
     echo "<script type='text/javascript'> document.location = 'home.php'; </script>";
   } else{
->>>>>>> d21bdfd341c88116e621f99ba6ee018e3cf98df1
 
     echo "<script>alert('Invalid Username or Password');</script>";
 
@@ -37,6 +31,7 @@ if(isset($_POST['login']))
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Twittie</title>
+  <link id="favicon" rel="shortcut icon" href="img/Twittie-Bird-icon.png" type="image/png">
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" href="css/bootstrap.css" />
